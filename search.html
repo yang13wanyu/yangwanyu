@@ -1,0 +1,15 @@
+<p>search<strong>{{ p }}</strong></p>
+
+{% if books %}
+    <p>Found {{ book|length }} book{{ book|pluralize }}.</p>
+    <ul>
+        {% for book in books %}
+        
+        <li><a href="search/service/?p={{ book }}">{{ book }}
+</a><BR><a href="search/delete/?select={{ book}}">Delete</a></span></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No books matched your search criteria.</p>
+{% endif %}
+
